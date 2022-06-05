@@ -10,6 +10,7 @@ dotenv.config()
 
 app.use(express.json())
 app.use(cors())
+app.options('*', cors()) 
 app.use("/api/payment",paymentRoutes)
 
 const port = process.env.PORT || 8080
