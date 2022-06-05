@@ -1,11 +1,12 @@
 const router = require("express").Router()
 const Razorpay = require("razorpay")
 const crypto = require("crypto")
+const cors = require("cors")
 
 
 
-
-router.post("/orders",async(req,res)=>{
+router.options("/orders", cors())
+router.post("/orders",cors(), async(req,res)=>{
     try{
         const instance = new Razorpay({
             key_id:process.env.KEY_ID,
