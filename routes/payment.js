@@ -67,4 +67,16 @@ router.post("/verify", async(req,res)=>{
     }
 })
 
+
+
+router.post("/sample", async(req,res)=>{
+    try{
+        res.status(200).json({message:"sample verified successfully!"});
+    }
+    catch(error){
+        console.log(error);
+        res.status(500).json({message:"Internal server error!"})
+    }
+})
+
 module.exports = router
