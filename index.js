@@ -13,6 +13,10 @@ app.use(express.json())
 app.options('*', cors()) 
 app.use("/api/payment",paymentRoutes)
 
+app.get("/", (req,res)=>{
+    res.status(200).send("welcome")
+})
+
 const port = process.env.PORT || 8080
 
 app.listen(port, ()=>{
